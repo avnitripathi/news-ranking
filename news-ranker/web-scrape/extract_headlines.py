@@ -9,12 +9,12 @@ def extract_headlines(website, tag, class_):
     soup1 = BeautifulSoup(coverpage, 'html5lib')
     coverpage_news = soup1.find_all(tag, class_=class_)
 
-    news = set([n.get_text().replace('\n', '') for n in coverpage_news])
+    news = [n.get_text().replace('\n', '') for n in coverpage_news]
 
     print(website)
     print(len(news))
 
-    return list(news)
+    return news
 
 def extract_all():
     web_info = {
