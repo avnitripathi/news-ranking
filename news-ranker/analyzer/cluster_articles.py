@@ -1,12 +1,12 @@
 import json
-
+#import os, sys
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 def restructure_data():
-    with open('../data/extracted_headlines.json') as f:
+    with open('extracted_headlines.json') as f:
         data = json.load(f)
     headline_to_source = {}
     source_number = {}
