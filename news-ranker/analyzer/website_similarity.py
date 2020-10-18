@@ -44,14 +44,34 @@ def run_and_plot(messages_):
 
 
 def average_similarity(messages1, messages2):
+    """messages1 and messages2 represent the encoded headlines from two news sources
+    corr represents the correlation between the two
+    - currently returns average correlation"""
+    if np.array_equal(messages2, messages1):
+        return 1
     corr = np.corrcoef(messages1, messages2)
     return np.average(corr)
 
 
 def find_similarity(message1, message2):
+    """represents messages as vectors which are used to calculate similarity"""
     message1_encoded = embed(message1)
     message2_encoded = embed(message2)
     return average_similarity(message1_encoded, message2_encoded)
+
+
+def show_plot(similarity_matrix, keys):
+    sns.set(font_scale=1.2)
+    g = sns.heatmap(
+        similarity_matrix,
+        xticklabels=keys,
+        yticklabels=keys,
+        vmin=0,
+        vmax=1,
+        cmap="YlOrRd")
+    g.set_xticklabels(keys)
+    g.set_title("Semantic Textual Similarity")
+    plt.show()
 
 
 def calc_all_similarities():
@@ -62,7 +82,9 @@ def calc_all_similarities():
     for i in range(len(keys)):
         for j in range(len(keys)):
             similarity_matrix[i][j] = find_similarity(data[keys[i]], data[keys[j]])
-    print(similarity_matrix)
+    show_plot(similarity_matrix, keys)
+    return similarity_matrix
 
 
-calc_all_similarities()
+similar = calc_all_similarities()
+print(similar)
