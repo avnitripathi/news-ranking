@@ -54,12 +54,18 @@ def average_similarity(messages1, messages2):
 def find_similarity(message1, message2):
     """represents messages as vectors which are used to calculate similarity"""
     total = 0
+    embed1 = []
+    embed2 = []
+    for i in range(len(message1)):
+        encoded = embed([message1[i]])
+        embed1.append(encoded)
+    for j in range(len(message2)):
+        encoded = embed([message2[j]])
+        embed2.append(encoded)
     for i in range(len(message1)):
         max = 0
         for j in range(len(message2)):
-            message1_encoded = embed([message1[i]])
-            message2_encoded = embed([message2[j]])
-            sim = average_similarity(message1_encoded, message2_encoded)
+            sim = average_similarity(embed1[i], embed2[j])
             if sim > max:
                 max = sim
         total += max
