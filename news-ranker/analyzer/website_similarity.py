@@ -1,6 +1,4 @@
 import json
-
-
 import tensorflow as tf
 import itertools
 import tensorflow_hub as hub
@@ -55,9 +53,17 @@ def average_similarity(messages1, messages2):
 
 def find_similarity(message1, message2):
     """represents messages as vectors which are used to calculate similarity"""
-    message1_encoded = embed(message1)
-    message2_encoded = embed(message2)
-    return average_similarity(message1_encoded, message2_encoded)
+    total = 0
+    for i in range(len(message1)):
+        max = 0
+        for j in range(len(message2)):
+            message1_encoded = embed([message1[i]])
+            message2_encoded = embed([message2[j]])
+            sim = average_similarity(message1_encoded, message2_encoded)
+            if sim > max:
+                max = sim
+        total += max
+    return total/len(message1)
 
 
 def show_plot(similarity_matrix, keys):
@@ -75,7 +81,7 @@ def show_plot(similarity_matrix, keys):
 
 
 def calc_all_similarities():
-    with open('../data/extracted_headlines.json') as f:
+    with open('news-ranker/data/extracted_headlines.json') as f:
         data = json.load(f)
     keys = list(data.keys())
     similarity_matrix = np.zeros((len(keys), len(keys)))
@@ -83,8 +89,34 @@ def calc_all_similarities():
         for j in range(len(keys)):
             similarity_matrix[i][j] = find_similarity(data[keys[i]], data[keys[j]])
     show_plot(similarity_matrix, keys)
+    cluster_similarities(keys, similarity_matrix)
     return similarity_matrix
-
-
+def cluster_similarities(keys, similarity_matrix):
+    keyList = keys.copy()
+    clone = similarity_matrix.copy()
+    print(clone)
+    k = []
+    while(len(keyList) > 0):
+        x, y = np.where(clone == np.amax(clone))[0][0], np.where(clone == np.amax(clone))[1][0]
+        clone[x][y] = 0
+        key1, key2 = keys[x], keys[y]
+        if key1 == key2:
+            continue
+        if key1 in keyList or key2 in keyList:
+            found = False
+            for i in k:
+                if key1 in i:
+                    i.append(key2)
+                    keyList.remove(key2)
+                    found = True
+                elif key2 in i:
+                    i.append(key1)
+                    keyList.remove(key1)
+                    found = True
+            if not found:
+                k.append([key1, key2])
+                keyList.remove(key1)
+                keyList.remove(key2)
+    print(k)
 similar = calc_all_similarities()
 print(similar)
