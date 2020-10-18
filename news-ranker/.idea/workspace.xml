@@ -26,13 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="610f47cb-904e-425d-b9f9-42a0f4c1c990" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analyzer/website_similarity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/news-ranker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/news-ranker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/extracted_headlines.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/extracted_headlines.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-scrape/extract_headlines.py" beforeDir="false" afterPath="$PROJECT_DIR$/web-scrape/extract_headlines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyzer/website_similarity.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyzer/website_similarity.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602953812235</updated>
-      <workItem from="1602953813256" duration="16721000" />
+      <workItem from="1602953813256" duration="21943000" />
     </task>
     <servers />
   </component>
@@ -219,22 +214,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602970185701" />
-    <state width="1493" height="123" key="GridCell.Tab.0.bottom" timestamp="1602971616761">
+    <state width="1493" height="330" key="GridCell.Tab.0.bottom" timestamp="1602978146715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="123" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602971616761" />
-    <state width="1493" height="123" key="GridCell.Tab.0.center" timestamp="1602971616761">
+    <state width="1493" height="330" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602978146715" />
+    <state width="1493" height="330" key="GridCell.Tab.0.center" timestamp="1602978146715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="123" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602971616761" />
-    <state width="1493" height="123" key="GridCell.Tab.0.left" timestamp="1602971616761">
+    <state width="1493" height="330" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602978146715" />
+    <state width="1493" height="330" key="GridCell.Tab.0.left" timestamp="1602978146715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="123" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602971616761" />
-    <state width="1493" height="123" key="GridCell.Tab.0.right" timestamp="1602971616761">
+    <state width="1493" height="330" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602978146715" />
+    <state width="1493" height="330" key="GridCell.Tab.0.right" timestamp="1602978146715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="123" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602971616761" />
+    <state width="1493" height="330" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602978146715" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1602970376855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -246,7 +241,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/news_ranker$cluster_articles.coverage" NAME="cluster_articles Coverage Results" MODIFIED="1602956696620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analyzer" />
-    <SUITE FILE_PATH="coverage/news_ranker$website_similarity.coverage" NAME="website_similarity Coverage Results" MODIFIED="1602971616745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analyzer" />
+    <SUITE FILE_PATH="coverage/news_ranker$website_similarity.coverage" NAME="website_similarity Coverage Results" MODIFIED="1602978146689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analyzer" />
     <SUITE FILE_PATH="coverage/news_ranker$extract_headlines.coverage" NAME="extract_headlines Coverage Results" MODIFIED="1602964140255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web-scrape" />
   </component>
 </project>

@@ -2,7 +2,7 @@ import json
 
 
 import tensorflow as tf
-
+import itertools
 import tensorflow_hub as hub
 import matplotlib.pyplot as plt
 import numpy as np
@@ -44,11 +44,8 @@ def run_and_plot(messages_):
 
 
 def average_similarity(messages1, messages2):
-    running_sum = 0
-    for i in range(len(messages1)):
-        for j in range(len(messages2)):
-            running_sum += cosine_similarity(np.array(messages1[i]).reshape(1, -1), np.array(messages2[j]).reshape(1, -1))
-    return running_sumgit /(len(messages1) * len(messages2))
+    corr = np.corrcoef(messages1, messages2)
+    return np.average(corr)
 
 
 def find_similarity(message1, message2):
@@ -60,3 +57,12 @@ def find_similarity(message1, message2):
 def calc_all_similarities():
     with open('../data/extracted_headlines.json') as f:
         data = json.load(f)
+    keys = list(data.keys())
+    similarity_matrix = np.zeros((len(keys), len(keys)))
+    for i in range(len(keys)):
+        for j in range(len(keys)):
+            similarity_matrix[i][j] = find_similarity(data[keys[i]], data[keys[j]])
+    print(similarity_matrix)
+
+
+calc_all_similarities()
