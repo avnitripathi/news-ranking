@@ -1,5 +1,7 @@
 # HackGT 7 Project: Norenue News
 
+![Sample Image](news_heatmap.png)
+
 This project tackles media echo chambers by clustering news sources and recommending a diverse spread. The steps involved are below:
 
 1. Scrape politics headlines from popular UK news sites.
